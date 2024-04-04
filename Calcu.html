@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Page</title>
+</head>
+<style>
+
+	*{
+		padding:0;
+		margin:0;
+		box-sizing:border-box;
+		font-family:monospace;
+	}
+	
+	body{
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		height:100vh;
+	}
+	.container{
+		width:100%;
+		height:100vh;
+		background-color:rgb(55,60,60);
+		padding:25px;
+		max-width:500px;
+		max-height:640px;
+	}
+	
+	.headDisplay{
+		margin-top:10px;
+		margin-bottom:30px;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		width:100%;
+		height:90px;
+		<!--padding:20px 15px;
+		
+		border-radius: 10px;
+		background: #5c5c5c;
+		box-shadow: inset 6px 6px 6px #4b4b4b,
+       inset -6px -6px 6px #6d6d6d;
+	}
+	.headDisplay input{
+		height:100%;
+		width:100%;
+		border:none;
+		outline:none;
+		text-align:end;
+		background-color:rgb(80,80,80);
+		color:rgb(240,240,240);
+		font-size:2.4rem;
+		padding:20px;
+		border-radius:10px;
+		background:transparent;
+	}
+	
+	.keypad-operator, .keypad-delete-equals, .keypad-nums{
+		width:100%;
+		display:flex;
+		justify-content:space-between;
+		margin:20px 0px;
+	}
+	
+	.keypad-operator button, .keypad-nums button{
+		height:65px;
+		width:100%;
+		font-size:1.8rem;
+		margin:0px 10px;
+	}
+	
+	
+	
+	button, .keypad-delete-equals button{
+		width:100%;
+		height:50px;
+		font-size:1.2rem;
+		margin:0px 10px;
+		color:rgb(240,240,240);
+		background-color:rgb(65,65,65);
+		border-radius:10px 20px 10px 20px;
+		border:none;
+		box-shadow:-3px -3px 8px rgba(255,255,255,.2), 3px 3px 20px rgba(0,0,0,.3);
+		border:.3px solid rgb(45,45,45);
+		transition:.8s;
+	}
+	
+	.keypad-operator button{
+		background-color:rgb(65,65,65);
+		color:rgb(0,170,170);
+		font-weight:bold;
+	}
+
+</style>
+<body>
+    <div class="container">
+		<div class="headDisplay">
+			<input name='display' class="headInput" type="text" readonly>
+		</div>
+		
+	<div class="keypad-delete-equals">
+		<button onclick=display.value=''>Clear All</button>
+		<button onclick=equal()>=</button>
+	</div>
+		
+<div class="keypad-operator">
+	<button onclick=calcu('+')>+</button>
+	<button onclick=calcu('-')>-</button>
+	<button onclick=calcu('*')>x</button>
+	<button onclick=calcu('/')>/</button>
+</div>
+		
+<div class="keypad-nums">
+<button onclick=calcu(1) >1</button>
+<button onclick=calcu(2) >2</button>
+<button onclick=calcu(3)>3</button>
+<button onclick=calcu(4)>4</button>
+</div>
+
+<div class="keypad-nums">
+<button onclick=calcu(5)>5</button>
+<button onclick=calcu(6)>6</button>
+<button onclick=calcu(7)>7</button>
+<button onclick=calcu(8)>8</button>
+</div>
+
+<div class="keypad-nums">
+<button onclick=calcu(9)>9</button>
+<button onclick=calcu(0)>0</button>
+<button onclick=calcu('.')>.</button>
+<button onclick=display.value=display.value.toString().slice(0,-1) id='del'>del</button>
+</div>
+
+	</div>
+</body>
+
+<script>
+
+let display= document.querySelector('.headInput');
+
+display.value='hello';
+
+function calcu(a){
+	
+	if(display.value==='hello'){
+		display.value=`${a}`;
+	}else{
+		display.value+=`${a}`;
+	}
+}
+
+function equal(){
+display.value = eval(display.value);
+	
+}
+
+</script>
+</html>
